@@ -1,0 +1,26 @@
+<div class="form-outer">
+    <div class="position-relative mt-3">
+        <span class="back-arrow">
+            <img src="../../assets/backArrow.svg">
+        </span>
+        <h4 class="form-heading">Payout</h4>
+    </div>
+
+  <form [formGroup]="payoutForm" (ngSubmit)="handleForm(payoutForm)">
+    <div class="field-set">
+      <label>
+        Amount
+      </label>
+      <input type="text" id="inputUsername" class="form-control" placeholder="Enter amount" autofocus
+                autocomplete="off" formControlName="amount" required/>
+    </div>
+    <div class="field-set">
+        <label>
+          Description
+        </label>
+        <input type="textArea" id="inputUsername" class="form-control" placeholder="Reason for Payout" autofocus
+                autocomplete="off" formControlName="description" required/>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="form-outer">
+  <h1 class="text-center title">Propane POS</h1>
+  <h4 class="form-heading">Shift Login</h4>
+<form [formGroup]="loginForm" (ngSubmit)="handleForm(loginForm)">
+  <div class="field-set">
+    <label>
+      Employee Name
+    </label>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Enter the name here" autofocus
+    autocomplete="off" formControlName="name" required>
+    <!-- <div class="error">error message here</div> -->
+  </div>
+  <div class="field-set">
+    <label>
+      PIN
+    </label>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Enter the pincode here" autofocus
+    autocomplete="off" formControlName="pincode" required>
+  </div>
+  <button class="btn btn-primary"  type="submit">Enter</button>
+</form>
+</div>

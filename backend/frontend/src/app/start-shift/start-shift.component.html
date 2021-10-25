@@ -1,0 +1,67 @@
+<div class="form-outer">
+    <div class="position-relative mt-3">
+        <span class="back-arrow">
+            <img src="../../assets/backArrow.svg">
+        </span>
+        <h4 class="form-heading">Start Shift</h4>
+    </div>
+    <div class="info-box">
+        <h4 class="box-head">
+            Shift Data
+        </h4>
+        <table class="info-table">
+            <tr>
+                <td>Name</td>
+                <td>{{this.username}}</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>{{myDate | date:'fullDate'}}</td>
+            </tr>
+            <tr>
+                <td>Start Time</td>
+                <td>{{myDate | date:'h:mm:ss a'}}</td>
+            </tr>
+            <!-- <tr>
+                <td>End Time</td>
+                <td>---</td>
+            </tr> -->
+            <tr>
+                <td>Price</td>
+                <td>{{this.currentPrice}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <form [formGroup]="startShiftForm" (ngSubmit)="handleForm(startShiftForm)" class="mt-3">
+        <h4>Enter Starting Litres</h4>
+        <div class="field-wrap">
+            <div class="field-set">
+                <label>
+                    Dispenser 1
+                </label>
+                <input type="number" id="inputUsername" class="form-control" placeholder="Enter the litres" autofocus
+                autocomplete="off" formControlName="litres_dispenser1" required/>
+            </div>
+            <div class="file-upload">
+                <span class="upload-btn"><img src="../../assets//camera.svg"></span>
+                <input type="file" id="myfile" name="myfile" class="input-file">
+            </div>
+        </div>
+
+        <div class="field-wrap">
+            <div class="field-set">
+                <label>
+                    Dispenser 2
+                </label>
+                <input type="number" id="inputUsername" class="form-control" placeholder="Enter the litres" autofocus
+                autocomplete="off" formControlName="litres_dispenser2" required/>
+            </div>
+            <div class="file-upload">
+                <span class="upload-btn"><img src="../../assets//camera.svg"></span>
+                <input type="file" id="myfile" name="myfile" class="input-file">
+            </div>
+        </div>
+        <button class="btn btn-primary"  type="submit">Start Shift</button>
+    </form>
+</div>

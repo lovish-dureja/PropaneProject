@@ -1,0 +1,26 @@
+<div class="form-outer">
+    <div class="position-relative mt-3">
+        <span class="back-arrow">
+            <img src="../../assets/backArrow.svg">
+        </span>
+        <h4 class="form-heading">Price Change</h4>
+    </div>
+
+  <form [formGroup]="priceChangeForm" (ngSubmit)="handleForm(priceChangeForm)">
+    <div class="field-set">
+      <label>
+        Current Price
+      </label>
+      <input type="number" id="inputUsername" class="form-control" placeholder="$0.00" autofocus
+                autocomplete="off" formControlName="current_price" required/>
+    </div>
+    <div class="field-set">
+        <label>
+            New Price
+        </label>
+        <input type="number" id="inputUsername" class="form-control" placeholder="Enter new price" autofocus
+                autocomplete="off" formControlName="new_price" required/>
+      </div>
+    <button type="submit" class="btn btn-primary">Change Price</button>
+  </form>
+</div>

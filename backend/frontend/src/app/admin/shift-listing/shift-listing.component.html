@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Welcome to the Propane Dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a routerLink="/admin/userListing">Users Listing</a >
+        </div>
+        <div class="col-md-6">
+            <a routerLink="/admin/shiftListing">Shift Listing</a >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Data for the Shift Listing</h1>
+            <table>
+            <div *ngFor="let shift of shiftListing">
+                <tr>
+                <td>Name: </td> 
+                <td>{{shift.name}}</td>
+                <td>Starting Litres Dispenser 1</td> {{shift.starting_litres_dispenser1}}
+                <td>Ending Litres Dispenser 1</td> {{shift.ending_litres_dispenser1}}
+                <td>Starting Litres Dispenser 2 </td> {{shift.starting_litres_dispenser2}}
+                <td>Ending Litres Dispenser 2 </td> {{shift.ending_litres_dispenser2}}
+                <td>Price </td> {{shift.Price}}
+                <td>Starting Time </td> {{shift.startTimeStamp}}
+                <td>Ending Time </td> {{shift.endTimeStamp}}
+            </tr>
+            </div> 
+           
+        </table>             
+        </div>
+    </div>
+</div>

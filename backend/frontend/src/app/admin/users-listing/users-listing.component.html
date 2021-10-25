@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="text-align: center;">Welcome to the Propane Dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a routerLink="/admin/userListing">Users Listing</a >
+        </div>
+        <div class="col-md-6">
+            <a routerLink="/admin/shiftListing">Shift Listing</a >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Data for the User Listing</h3>
+            <div *ngFor="let users of allUsers">
+                <label>Name: </label> {{users.name}}
+                <label>Phone Number</label> {{users.phoneNumber}}
+                <label>Status</label> {{users.status}}
+                <label>Role</label> {{users.role}}
+            </div>              
+        </div>
+    </div>
+</div>
