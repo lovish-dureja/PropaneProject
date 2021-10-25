@@ -86,7 +86,25 @@ exports.login = async function(req, res) {
         // create and assign a token
         const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
         res.header('Authorization', token);
-        successResponse(res,Messages.success, token);
+        let response = {
+            name: user.name,
+            token: token,
+            id: user._id,
+            role : user.role
+        }
+        successResponse(res,Messages.success, response);
+    }catch(error){
+        console.log(error) 
+        errorResponse(res, httpCodes.serverError,Messages.systemError);
+    }
+}
+
+// Api for fetching the price
+exports.fetchAllUsers = async function(req, res) {
+    try{
+        const fetchAllUsers = await User.find();
+        console.log('price change data', fetchAllUsers); 
+        successResponse(res,Messages.say('Records are fetched'), fetchAllUsers);
     }catch(error){
         console.log(error) 
         errorResponse(res, httpCodes.serverError,Messages.systemError);
